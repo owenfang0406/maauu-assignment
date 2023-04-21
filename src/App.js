@@ -1,25 +1,40 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState, useEffect } from "react"
+import "./App.css"
+import Carousel from "./Components/Carousel/Carousel"
 
 function App() {
+  const slides = [
+    { url: "./images/1.png" },
+    { url: "./images/2.png" },
+    { url: "./images/3.png" },
+    { url: "./images/4.png" },
+  ]
+  const [viewportWidth, setViewportWidth] = useState(window.innerWidth)
+  useEffect(() => {
+    function handleResize() {
+      setViewportWidth(() => window.innerWidth * 0.65)
+    }
+    setViewportWidth(() => window.innerWidth * 0.65)
+
+    window.addEventListener("resize", handleResize)
+    return () => window.removeEventListener("resize", handleResize)
+  }, [viewportWidth])
+
+  console.log(viewportWidth)
+
+  const containerStyles = {
+    width: `${viewportWidth}px`,
+    height: "100vh",
+    zIndex: "0",
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div style={containerStyles}>
+        <Carousel slides={slides} parentWidth={viewportWidth} />
+      </div>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
