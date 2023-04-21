@@ -1,5 +1,10 @@
 import React, { useRef, useState, useEffect, useCallback } from "react"
 import styles from "./Carousel.module.css"
+import {
+  MdKeyboardArrowUp,
+  MdKeyboardArrowRight,
+  MdKeyboardArrowLeft,
+} from "react-icons/md"
 
 const Carousel = ({ slides, parentWidth }) => {
   const timerRef = useRef(null)
@@ -19,30 +24,38 @@ const Carousel = ({ slides, parentWidth }) => {
   }
 
   const leftArrowStyles = {
+    width: "30px",
+    height: "30px",
     position: "absolute",
     top: "50%",
     transform: "translate(0, -50%)",
     left: "32px",
     fontSize: "45px",
-    color: "#FBF7F4",
+    color: "black",
+    backgroundColor: "rgba(255, 255, 255, 0.1)",
+    borderRadius: "50%",
     zIndex: 1,
     cursor: "pointer",
   }
 
   const rightArrowStyles = {
+    width: "30px",
+    height: "30px",
     position: "absolute",
     top: "50%",
     transform: "translate(0, -50%)",
     right: "32px",
     fontSize: "45px",
-    color: "#FBF7F4",
+    color: "black",
+    backgroundColor: "rgba(255, 255, 255, 0.1)",
+    borderRadius: "50%",
     zIndex: 1,
     cursor: "pointer",
   }
 
   const dotsContainerStyles = {
     position: "relative",
-    bottom: "50px",
+    // bottom: "50px",
     display: "flex",
     justifyContent: "center",
   }
@@ -113,10 +126,12 @@ const Carousel = ({ slides, parentWidth }) => {
   return (
     <div style={sliderStyles}>
       <div style={leftArrowStyles} onClick={GoToPrevious}>
-        ⇦
+        <MdKeyboardArrowLeft className={styles.leftArrow}></MdKeyboardArrowLeft>
       </div>
       <div style={rightArrowStyles} onClick={GoToNext}>
-        ⇨
+        <MdKeyboardArrowRight
+          className={styles.rightArrow}
+        ></MdKeyboardArrowRight>
       </div>
       <div style={slidesContainerOverflowStyles}>
         <div style={getSlideContainerStylesWithWidth()}>
@@ -130,15 +145,33 @@ const Carousel = ({ slides, parentWidth }) => {
             )
           })}
         </div>
-        <div style={dotsContainerStyles}>
-          {slides.map((slides, slideIndex) => (
-            <div
-              key={slideIndex}
-              style={dotStyles}
-              className={slideIndex === currentIndex ? `${styles.active}` : ""}
-              onClick={() => goToSlide(slideIndex)}
-            ></div>
-          ))}
+        <div className={styles.lowerCon}>
+          <div style={dotsContainerStyles}>
+            <div>棟別</div>
+            {slides.map((slides, slideIndex) => (
+              <div
+                key={slideIndex}
+                style={dotStyles}
+                className={
+                  slideIndex === currentIndex ? `${styles.active}` : ""
+                }
+                onClick={() => goToSlide(slideIndex)}
+              ></div>
+            ))}
+          </div>
+          <div className={styles.loanAdBar}>
+            <div className={styles.loanClickBar}>
+              <div className={styles.arrow}>
+                <MdKeyboardArrowUp></MdKeyboardArrowUp>
+              </div>
+              <div className={styles.totalPriceTag}>
+                NT$12,609,900/<span>目前總價</span>
+              </div>
+              <div className={styles.monthlyPriceTag}>
+                NT$ 31,609/<span>最低月付</span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
