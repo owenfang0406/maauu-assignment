@@ -12,9 +12,9 @@ function App() {
   const [viewportWidth, setViewportWidth] = useState(window.innerWidth)
   useEffect(() => {
     function handleResize() {
-      setViewportWidth(() => window.innerWidth * 0.65)
+      setViewportWidth(() => window.innerWidth * 0.75)
     }
-    setViewportWidth(() => window.innerWidth * 0.65)
+    setViewportWidth(() => window.innerWidth * 0.75)
 
     window.addEventListener("resize", handleResize)
     return () => window.removeEventListener("resize", handleResize)
