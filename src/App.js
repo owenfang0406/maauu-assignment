@@ -13,10 +13,10 @@ function App() {
   const [viewportWidth, setViewportWidth] = useState(window.innerWidth)
   useEffect(() => {
     function handleResize() {
-      setViewportWidth(() => window.innerWidth * 0.75)
+      setViewportWidth(() => window.innerWidth * 0.72)
     }
     if (window.innerWidth > 1500) {
-      setViewportWidth(() => window.innerWidth * 0.75)
+      setViewportWidth(() => window.innerWidth * 0.72)
     }
 
     if (window.innerWidth < 1500 && window.innerWidth > 800) {
@@ -31,8 +31,8 @@ function App() {
       setViewportWidth(() => window.innerWidth)
     }
 
-    // window.addEventListener("resize", handleResize)
-    // return () => window.removeEventListener("resize", handleResize)
+    window.addEventListener("resize", handleResize)
+    return () => window.removeEventListener("resize", handleResize)
   }, [viewportWidth])
 
   console.log(window.innerWidth)

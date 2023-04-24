@@ -30,12 +30,22 @@ function Building() {
       <div className={styles.selectionCon}>
         <div className={styles.facade}>
           <div className={styles.facadeOption}>背山</div>
-          <div className={`${styles.facadeOption} ${styles.notAvailableBlack}`}>
-            面水
-          </div>
+          <div className={styles.facadeOption}>面水</div>
           <div className={styles.facadeOption}>高樓層</div>
         </div>
         <div className={styles.buildingCon}>
+          <div className={styles.buildingOption}>
+            <div className={styles.buildingOptionSubCon}>
+              <span className={styles.numberOfBuilding}>A</span>
+              <span className={styles.unitEndTag}>棟</span>
+            </div>
+          </div>
+          <div className={styles.buildingOption}>
+            <div className={styles.buildingOptionSubCon}>
+              <span className={styles.numberOfBuilding}>B</span>
+              <span className={styles.unitEndTag}>棟</span>
+            </div>
+          </div>
           <div className={styles.buildingOption}>
             <div className={styles.buildingOptionSubCon}>
               <span className={styles.numberOfBuilding}>C</span>

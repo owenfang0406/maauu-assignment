@@ -65,6 +65,49 @@
   composes: totalPriceSubCon;
 }
 
+.householdCon {
+  padding-top: 30px;
+  padding-bottom: 20px;
+  width: 100%;
+  height: 400px;
+  display: flex;
+  overflow-x: scroll;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  background-color: aqua;
+}
+
+.householdOptionCon {
+  width: 390px;
+  height: 70px;
+  border-radius: 195px;
+  border: 1px rgba(196, 196, 196, 1) solid;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.householdOptionInnerCon {
+  width: 320px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.householdOptionCon:hover {
+  border: 2px solid rgba(0, 151, 255, 1);
+}
+
+.householdTag {
+  font-size: 32px;
+}
+
+.optionTotalPriceCon {
+  font-size: 14px;
+}
+
 .learnMoreCon {
   width: 100%;
   padding: 40px 0px;
@@ -111,26 +154,6 @@
   width: 100%;
 }
 
-.buildingCon {
-  width: 100%;
-  display: flex;
-  gap: 10px;
-  padding: 10px 20px;
-  flex-wrap: wrap;
-}
-
-.buildingOption {
-  width: 70px;
-  height: 70px;
-  border: 1px solid rgba(196, 196, 196, 1);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 10px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
 .notAvailable {
   background-color: rgba(67, 67, 67, 1);
 }
@@ -138,22 +161,6 @@
 .notAvailableBlack {
   background-color: rgba(34, 30, 31, 1);
   color: white;
-}
-
-.buildingOption:hover {
-  border: 2px solid rgba(0, 151, 255, 1);
-  opacity: 0.7;
-}
-
-.buildingOptionSubCon {
-  display: flex;
-  align-items: baseline;
-}
-
-.numberOfBuilding {
-  font-size: 32px;
-  font-weight: 400;
-  font-family: "Roboto";
 }
 
 .totalPrice {
@@ -168,4 +175,11 @@
 .grayEndNote {
   font-size: 12px;
   color: rgba(163, 163, 163, 1);
+}
+
+.sliderCon {
+  width: 100%;
+  /* height: 500px; */
+  display: flex;
+  overflow-x: scroll;
 }
