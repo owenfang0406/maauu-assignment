@@ -4,6 +4,7 @@ import Building from "./Building"
 import Floor from "./Floor.js"
 import Household from "./Household"
 import ParkingSpace from "./ParkingSpace"
+import InteriorOption from "./InteriorOption"
 
 function SideBar() {
   return (
@@ -12,6 +13,7 @@ function SideBar() {
       <Floor></Floor>
       <Household></Household>
       <ParkingSpace></ParkingSpace>
+      <InteriorOption></InteriorOption>
     </div>
   )
 }

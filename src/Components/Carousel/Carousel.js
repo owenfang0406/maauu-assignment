@@ -165,13 +165,13 @@ const Carousel = ({ slides, parentWidth }) => {
               </div>
               <div className={styles.totalPriceTag}>
                 <span className={styles.totalPrice}>
-                  <spa className={styles.dollarSign}>NT$</spa>12,609,900
+                  <span className={styles.dollarSign}>NT$</span>12,609,900
                 </span>
                 <span className={styles.totalPriceEndTag}>/目前總價</span>
               </div>
               <div className={styles.monthlyPriceTag}>
                 <span className={styles.monthlyPice}>
-                  <spa className={styles.dollarSign}>NT$</spa>31,609
+                  <span className={styles.dollarSign}>NT$</span>31,609
                 </span>
                 <span className={styles.monthlyPiceEndTag}>/最低月付</span>
               </div>
