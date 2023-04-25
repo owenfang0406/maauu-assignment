@@ -37,13 +37,13 @@ function InteriorOption() {
         </div>
       </div>
       <div className={styles.interestCon}>
+        <div className={styles.interestSubCon}>
+          <div className={styles.interestText}>我有興趣</div>
+        </div>
         <div className={styles.learnMoreSubCon}>
           <div className={styles.crossSymbol}>＋</div>
           <div className={styles.learnMoreText}>詳細</div>
           <div></div>
-        </div>
-        <div className={styles.interestSubCon}>
-          <div className={styles.interestText}>我有興趣</div>
         </div>
       </div>
     </div>

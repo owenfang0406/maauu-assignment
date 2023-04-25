@@ -5,6 +5,7 @@ import Floor from "./Floor.js"
 import Household from "./Household"
 import ParkingSpace from "./ParkingSpace"
 import InteriorOption from "./InteriorOption"
+import NextStep from "./NextStep"
 
 function SideBar() {
   return (
@@ -14,6 +15,7 @@ function SideBar() {
       <Household></Household>
       <ParkingSpace></ParkingSpace>
       <InteriorOption></InteriorOption>
+      <NextStep></NextStep>
     </div>
   )
 }
