@@ -68,7 +68,7 @@ function Building() {
         <div className={styles.learnMoreCon}>
           <div className={styles.learnMoreSubCon}>
             <div className={styles.crossSymbol}>＋</div>
-            <div>詳細</div>
+            <div className={styles.learnMoreText}>詳細</div>
             <div></div>
           </div>
         </div>

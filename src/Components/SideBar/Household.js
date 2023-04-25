@@ -38,75 +38,10 @@ function Household() {
       <div className={styles.sliderCon}>
         <Slider></Slider>
       </div>
-      {/* <div className={styles.householdCon}>
-        <div className={styles.householdOptionCon}>
-          <div className={styles.householdOptionInnerCon}>
-            <div className={styles.householdFullTag}>
-              <span className={styles.householdTag}>A</span>
-              <span className={styles.unitEndTag}>戶</span>
-            </div>
-            <div className={styles.optionTotalPriceCon}>NT$8,170,000</div>
-          </div>
-        </div>
-        <div className={styles.householdOptionCon}>
-          <div className={styles.householdOptionInnerCon}>
-            <div className={styles.householdFullTag}>
-              <span className={styles.householdTag}>B</span>
-              <span className={styles.unitEndTag}>戶</span>
-            </div>
-            <div className={styles.optionTotalPriceCon}>฿8,170,000</div>
-          </div>
-        </div>
-        <div className={styles.householdOptionCon}>
-          <div className={styles.householdOptionInnerCon}>
-            <div className={styles.householdFullTag}>
-              <span className={styles.householdTag}>C</span>
-              <span className={styles.unitEndTag}>戶</span>
-            </div>
-            <div className={styles.optionTotalPriceCon}>8.170.000₫</div>
-          </div>
-        </div>
-        <div className={styles.householdOptionCon}>
-          <div className={styles.householdOptionInnerCon}>
-            <div className={styles.householdFullTag}>
-              <span className={styles.householdTag}>D</span>
-              <span className={styles.unitEndTag}>戶</span>
-            </div>
-            <div className={styles.optionTotalPriceCon}>¥8,170,000</div>
-          </div>
-        </div>
-        <div className={styles.householdOptionCon}>
-          <div className={styles.householdOptionInnerCon}>
-            <div className={styles.householdFullTag}>
-              <span className={styles.householdTag}>E</span>
-              <span className={styles.unitEndTag}>戶</span>
-            </div>
-            <div className={styles.optionTotalPriceCon}>¥8,170,000</div>
-          </div>
-        </div>
-        <div className={styles.householdOptionCon}>
-          <div className={styles.householdOptionInnerCon}>
-            <div className={styles.householdFullTag}>
-              <span className={styles.householdTag}>F</span>
-              <span className={styles.unitEndTag}>戶</span>
-            </div>
-            <div className={styles.optionTotalPriceCon}>¥8,170,000</div>
-          </div>
-        </div>
-        <div className={styles.householdOptionCon}>
-          <div className={styles.householdOptionInnerCon}>
-            <div className={styles.householdFullTag}>
-              <span className={styles.householdTag}>G</span>
-              <span className={styles.unitEndTag}>戶</span>
-            </div>
-            <div className={styles.optionTotalPriceCon}>¥8,170,000</div>
-          </div>
-        </div>
-      </div> */}
       <div className={styles.learnMoreCon}>
         <div className={styles.learnMoreSubCon}>
           <div className={styles.crossSymbol}>＋</div>
-          <div>詳細</div>
+          <div className={styles.learnMoreText}>詳細</div>
           <div></div>
         </div>
       </div>
