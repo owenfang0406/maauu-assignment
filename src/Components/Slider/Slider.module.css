@@ -1,0 +1,80 @@
+.wrapper {
+  position: relative;
+  width: 1500px;
+  height: 100%;
+  display: flex;
+}
+
+.leftArrow {
+  position: absolute;
+  left: 10px;
+  top: 200px;
+}
+
+.rightArrow {
+  position: absolute;
+  right: 10px;
+  top: 200px;
+}
+
+.slide1 {
+  width: 450px; /* take up full width of wrapper */
+  height: 100%;
+  background-color: aquamarine;
+}
+
+.slide2 {
+  width: 450px; /* take up full width of wrapper */
+  height: 100%;
+  background-color: blue;
+}
+
+.slide3 {
+  width: 450px; /* take up full width of wrapper */
+  height: 100%;
+  background-color: black;
+}
+
+.householdCon {
+  padding-top: 30px;
+  padding-bottom: 20px;
+  padding: 0 20px;
+  width: 100%;
+  height: 400px;
+  display: flex;
+  overflow-x: scroll;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.householdOptionCon {
+  width: 390px;
+  height: 70px;
+  border-radius: 195px;
+  border: 1px rgba(196, 196, 196, 1) solid;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.householdOptionInnerCon {
+  width: 320px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.householdOptionCon:hover {
+  border: 2px solid rgba(0, 151, 255, 1);
+}
+
+.householdTag {
+  font-size: 32px;
+}
+
+.slideHidden {
+  display: none;
+}

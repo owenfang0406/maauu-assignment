@@ -136,7 +136,6 @@ const Carousel = ({ slides, parentWidth }) => {
       <div style={slidesContainerOverflowStyles}>
         <div style={getSlideContainerStylesWithWidth()}>
           {slides.map((_, slideIndex) => {
-            console.log(slides[slideIndex])
             return (
               <div
                 key={slideIndex}
@@ -165,11 +164,15 @@ const Carousel = ({ slides, parentWidth }) => {
                 <MdKeyboardArrowUp></MdKeyboardArrowUp>
               </div>
               <div className={styles.totalPriceTag}>
-                <span className={styles.totalPrice}>NT$12,609,900</span>
+                <span className={styles.totalPrice}>
+                  <span className={styles.dollarSign}>NT$</span>12,609,900
+                </span>
                 <span className={styles.totalPriceEndTag}>/目前總價</span>
               </div>
               <div className={styles.monthlyPriceTag}>
-                <span className={styles.monthlyPice}>NT$ 31,609</span>
+                <span className={styles.monthlyPice}>
+                  <span className={styles.dollarSign}>NT$</span>31,609
+                </span>
                 <span className={styles.monthlyPiceEndTag}>/最低月付</span>
               </div>
             </div>
