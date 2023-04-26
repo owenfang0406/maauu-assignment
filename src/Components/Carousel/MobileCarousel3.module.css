@@ -14,7 +14,7 @@
   position: absolute;
   top: 50%;
   transform: translate(0, -50%);
-  right: 32px;
+  right: 15px;
   font-size: 45px;
   color: black;
   background-color: rgba(255, 255, 255, 0.1);
@@ -30,7 +30,7 @@
   position: absolute;
   top: 50%;
   transform: translate(0, -50%);
-  left: 32px;
+  left: 15px;
   font-size: 45px;
   color: black;
   background-color: rgba(255, 255, 255, 0.1);

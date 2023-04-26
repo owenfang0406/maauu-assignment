@@ -168,6 +168,8 @@
 .grayEndNote {
   font-size: 12px;
   color: rgba(163, 163, 163, 1);
+  width: 100%;
+  text-align: center;
 }
 
 .learnMoreText {
