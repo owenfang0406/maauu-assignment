@@ -14,25 +14,6 @@ function App() {
   ]
   const [viewportWidth, setViewportWidth] = useState(window.innerWidth)
   const [isMobile, setIsMobile] = useState(false)
-  // useEffect(() => {
-  //   function handleResize() {
-  //     // setViewportWidth(() => window.innerWidth * 0.72)
-
-  //     if (window.innerWidth > 1500) {
-  //       setViewportWidth(() => window.innerWidth * 0.72)
-  //       setIsMobile(false)
-  //     } else if (window.innerWidth <= 1500 && window.innerWidth > 1366) {
-  //       setViewportWidth(() => window.innerWidth * 0.68)
-  //       setIsMobile(false)
-  //     } else {
-  //       setViewportWidth(() => window.innerWidth)
-  //       setIsMobile(true)
-  //     }
-  //   }
-
-  //   window.addEventListener("resize", handleResize)
-  //   return () => window.removeEventListener("resize", handleResize)
-  // }, [isMobile])
 
   useLayoutEffect(() => {
     const handleResize = () => {

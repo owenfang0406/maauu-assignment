@@ -133,12 +133,10 @@ const MobileCarousel3 = ({ slides, parentWidth }) => {
 
   const getSlideContainerStylesWithWidth = () => {
     const slideWidth = parentWidth * 0.95
-    // const transform = `translateX(${-(currentIndex * slideWidth)}px)`
 
     return {
       ...slidesContainerStyles,
       width: slideWidth * slides.length,
-      // transform: transform,
     }
   }
 

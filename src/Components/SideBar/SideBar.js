@@ -33,8 +33,6 @@ function SideBar({ sideBarWidth, isMobile }) {
     const wrapper = document.querySelector(`.${styles.wrapper}`)
     const width = wrapper.offsetWidth
     setWrapperWidth(() => width)
-    // console.log(width)
-    // console.log(sideBarWidth)
   }, [sideBarWidth])
 
   const containerStyles = {
