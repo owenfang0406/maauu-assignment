@@ -10,10 +10,10 @@ function NextStep() {
           仍在考慮？先加入願望清單，或分享給至親好友
         </div>
         <div className={styles.iconsCon}>
-          <div>
+          <div className={styles.icons}>
             <img src={require("./like.png")}></img>
           </div>
-          <div>
+          <div className={styles.icons}>
             <img src={require("./paperplane.png")}></img>
           </div>
         </div>

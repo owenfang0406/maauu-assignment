@@ -2,10 +2,15 @@
   width: 100%;
 }
 
+body::-webkit-scrollbar {
+  display: none;
+}
+
 .subWrapper {
   display: flex;
   margin: 0 auto;
   max-width: 2400px;
+  flex-wrap: wrap;
 }
 
 @media screen and (max-width: 786px) {

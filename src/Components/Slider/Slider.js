@@ -76,7 +76,7 @@ function Slider() {
                   <span className={styles.householdTag}>E</span>
                   <span className={styles.unitEndTag}>戶</span>
                 </div>
-                <div className={styles.optionTotalPriceCon}>NT$8,170,000</div>
+                <div className={styles.optionTotalPriceCon}>NT$5,170,000</div>
               </div>
             </div>
             <div className={styles.householdOptionCon}>
@@ -85,7 +85,7 @@ function Slider() {
                   <span className={styles.householdTag}>F</span>
                   <span className={styles.unitEndTag}>戶</span>
                 </div>
-                <div className={styles.optionTotalPriceCon}>฿8,170,000</div>
+                <div className={styles.optionTotalPriceCon}>฿6,170,000</div>
               </div>
             </div>
             <div className={styles.householdOptionCon}>
@@ -94,7 +94,7 @@ function Slider() {
                   <span className={styles.householdTag}>G</span>
                   <span className={styles.unitEndTag}>戶</span>
                 </div>
-                <div className={styles.optionTotalPriceCon}>8.170.000₫</div>
+                <div className={styles.optionTotalPriceCon}>7.170.000₫</div>
               </div>
             </div>
             <div className={styles.householdOptionCon}>
@@ -103,7 +103,7 @@ function Slider() {
                   <span className={styles.householdTag}>H</span>
                   <span className={styles.unitEndTag}>戶</span>
                 </div>
-                <div className={styles.optionTotalPriceCon}>¥8,170,000</div>
+                <div className={styles.optionTotalPriceCon}>¥7,170,000</div>
               </div>
             </div>
           </div>
