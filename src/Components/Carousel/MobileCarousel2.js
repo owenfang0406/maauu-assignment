@@ -9,32 +9,29 @@ import {
 const MobileCarousel2 = ({ slides, parentWidth }) => {
   const timerRef = useRef(null)
   const [currentIndex, setCurrentIndex] = useState(0)
+  const [displayIndex, setDisplayIndex] = useState(1)
   const slideRefs = useRef([])
   const SliderContainerRef = useRef(null)
   const [xPosition, setXPosition] = useState(0)
 
-  console.log(slideRefs)
-  // useEffect(() => {
-  //   const container = SliderContainerRef.current
-  //   const slidesIDs = window.document.querySelectorAll("#slides")
+  useEffect(() => {
+    const container = SliderContainerRef.current
+    const slidesIDs = window.document.querySelectorAll("#slides")
 
-  //   const handleScroll = () => {
-  //     setXPosition(() => container.scrollLeft)
-  //     const closestPosition = Math.round(
-  //       container.scrollLeft / (parentWidth * 0.95)
-  //     )
-  //     // setCurrentIndex(() => closestPosition - 1)
-  //     console.log(closestPosition)
-  //     console.log(container.scrollLeft)
-  //     console.log(slidesIDs)
-  //   }
+    const handleScroll = () => {
+      setXPosition(() => container.scrollLeft)
+      const closestPosition = Math.round(
+        container.scrollLeft / (parentWidth * 0.95)
+      )
+      setDisplayIndex(() => closestPosition + 1)
+    }
 
-  //   container.addEventListener("scroll", handleScroll)
+    container.addEventListener("scroll", handleScroll)
 
-  //   return () => {
-  //     container.removeEventListener("scroll", handleScroll)
-  //   }
-  // }, [])
+    return () => {
+      container.removeEventListener("scroll", handleScroll)
+    }
+  }, [parentWidth])
 
   const sliderStyles = {
     height: "100%",
@@ -181,6 +178,12 @@ const MobileCarousel2 = ({ slides, parentWidth }) => {
             </div>
           </div>
         </div>
+      </div>
+      <div className={styles.lowerCon2}>
+        <div
+          className={styles.buildingSpacing}
+        >{`棟別 ${displayIndex} / ${slides.length}`}</div>
+        <div className={styles.shouldShow3DModelNote}>外觀3D示意圖</div>
       </div>
       <div style={slidesContainerOverflowStyles} ref={SliderContainerRef}>
         <div style={getSlideContainerStylesWithWidth()}>

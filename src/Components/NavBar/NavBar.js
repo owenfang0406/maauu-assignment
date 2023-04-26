@@ -3,9 +3,10 @@ import styles from "./NavBar.module.css"
 import CompanyLogo from "../logo.svg"
 import Avatar from "../avatar.svg"
 
-function NarBar() {
+function NavBar({ isMobile }) {
+  const NavBarBg = () => (isMobile ? { backgroundColor: "white" } : {})
   return (
-    <nav className={styles.navWrapper}>
+    <nav style={NavBarBg()} className={styles.navWrapper}>
       <div>
         <img src={CompanyLogo}></img>
       </div>
@@ -19,4 +20,4 @@ function NarBar() {
   )
 }
 
-export default NarBar
+export default NavBar

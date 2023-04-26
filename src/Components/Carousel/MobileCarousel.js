@@ -20,7 +20,6 @@ const MobileCarousel = ({ slides, parentWidth }) => {
   const SliderContainerRef = useRef(null)
   const [xPosition, setXPosition] = useState(0)
 
-  console.log(slideRefs)
   useEffect(() => {
     const container = SliderContainerRef.current
     const slidesIDs = window.document.querySelectorAll("#slides")
@@ -31,9 +30,6 @@ const MobileCarousel = ({ slides, parentWidth }) => {
         container.scrollLeft / (parentWidth * 0.95)
       )
       setDisplayIndex(() => closestPosition + 1)
-      console.log(closestPosition)
-      console.log(container.scrollLeft)
-      console.log(slidesIDs)
     }
 
     container.addEventListener("scroll", handleScroll)
@@ -187,41 +183,6 @@ const MobileCarousel = ({ slides, parentWidth }) => {
             )
           })}
         </div>
-        {/* <div className={styles.lowerCon}>
-          <div style={dotsContainerStyles}>
-            <div className={styles.buildingSpacing}>棟別</div>
-            {slides.map((slides, slideIndex) => (
-              <div
-                key={slideIndex}
-                style={dotStyles}
-                className={
-                  slideIndex === currentIndex ? `${styles.active}` : ""
-                }
-                onClick={() => goToSlide(slideIndex)}
-              ></div>
-            ))}
-          </div>
-          <div className={styles.loanAdBar}>
-            <div className={styles.loanClickBar}>
-              <div className={styles.arrow}>
-                <MdKeyboardArrowUp></MdKeyboardArrowUp>
-              </div>
-              <div className={styles.totalPriceTag}>
-                <span className={styles.totalPrice}>
-                  <span className={styles.dollarSign}>NT$</span>12,609,900
-                </span>
-                <span className={styles.totalPriceEndTag}>/目前總價</span>
-              </div>
-              <div className={styles.monthlyPriceTag}>
-                <span className={styles.monthlyPice}>
-                  <span className={styles.dollarSign}>NT$</span>31,609
-                </span>
-                <span className={styles.monthlyPiceEndTag}>/最低月付</span>
-              </div>
-            </div>
-          </div>
-          <div className={styles.shouldShow3DModelNote}>外觀3D示意圖</div>
-        </div> */}
       </div>
     </div>
   )
