@@ -1,4 +1,10 @@
-import React, { useRef, useState, useEffect, useCallback } from "react"
+import React, {
+  useRef,
+  useState,
+  useEffect,
+  useCallback,
+  useLayoutEffect,
+} from "react"
 import styles from "./MobileCarousel.module.css"
 import {
   MdKeyboardArrowUp,
@@ -9,32 +15,33 @@ import {
 const MobileCarousel = ({ slides, parentWidth }) => {
   const timerRef = useRef(null)
   const [currentIndex, setCurrentIndex] = useState(0)
+  const [displayIndex, setDisplayIndex] = useState(1)
   const slideRefs = useRef([])
   const SliderContainerRef = useRef(null)
   const [xPosition, setXPosition] = useState(0)
 
   console.log(slideRefs)
-  // useEffect(() => {
-  //   const container = SliderContainerRef.current
-  //   const slidesIDs = window.document.querySelectorAll("#slides")
+  useEffect(() => {
+    const container = SliderContainerRef.current
+    const slidesIDs = window.document.querySelectorAll("#slides")
 
-  //   const handleScroll = () => {
-  //     setXPosition(() => container.scrollLeft)
-  //     const closestPosition = Math.round(
-  //       container.scrollLeft / (parentWidth * 0.95)
-  //     )
-  //     // setCurrentIndex(() => closestPosition - 1)
-  //     console.log(closestPosition)
-  //     console.log(container.scrollLeft)
-  //     console.log(slidesIDs)
-  //   }
+    const handleScroll = () => {
+      setXPosition(() => container.scrollLeft)
+      const closestPosition = Math.round(
+        container.scrollLeft / (parentWidth * 0.95)
+      )
+      setDisplayIndex(() => closestPosition + 1)
+      console.log(closestPosition)
+      console.log(container.scrollLeft)
+      console.log(slidesIDs)
+    }
 
-  //   container.addEventListener("scroll", handleScroll)
+    container.addEventListener("scroll", handleScroll)
 
-  //   return () => {
-  //     container.removeEventListener("scroll", handleScroll)
-  //   }
-  // }, [])
+    return () => {
+      container.removeEventListener("scroll", handleScroll)
+    }
+  }, [])
 
   const sliderStyles = {
     height: "100%",
@@ -160,6 +167,12 @@ const MobileCarousel = ({ slides, parentWidth }) => {
         <MdKeyboardArrowRight
           className={styles.rightArrow}
         ></MdKeyboardArrowRight>
+      </div>
+      <div className={styles.lowerCon}>
+        <div
+          className={styles.buildingSpacing}
+        >{`棟別 ${displayIndex} / ${slides.length}`}</div>
+        <div className={styles.shouldShow3DModelNote}>外觀3D示意圖</div>
       </div>
       <div style={slidesContainerOverflowStyles} ref={SliderContainerRef}>
         <div style={getSlideContainerStylesWithWidth()}>

@@ -40,6 +40,7 @@ function SideBar({ sideBarWidth, isMobile }) {
     zIndex: "0",
     overscrollBehaviorX: "none",
     overscrollBehaviorY: "none",
+    margin: "auto",
   }
 
   const mobileContainerStyles = {

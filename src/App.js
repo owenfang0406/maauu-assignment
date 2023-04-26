@@ -3,6 +3,7 @@ import "./App.css"
 import Carousel from "./Components/Carousel/Carousel"
 import SideBar from "./Components/SideBar/SideBar"
 import MobileCarousel from "./Components/Carousel/MobileCarousel"
+import NarBar from "./Components/NavBar/NarBar"
 
 function App() {
   const slides = [
@@ -66,6 +67,7 @@ function App() {
   const mobileContainerStyles = {
     ...containerStyles,
     height: "400px",
+    marginTop: "70px",
   }
 
   const sideBarWidth =
@@ -83,6 +85,7 @@ function App() {
   return (
     <div className="mainWrapper">
       <div className="subWrapper">
+        <NarBar></NarBar>
         {!isMobile && (
           <div style={containerStyles}>
             <Carousel slides={slides} parentWidth={viewportWidth} />

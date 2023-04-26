@@ -161,6 +161,27 @@ const MobileCarousel2 = ({ slides, parentWidth }) => {
           className={styles.rightArrow}
         ></MdKeyboardArrowRight>
       </div>
+      <div className={styles.lowerCon}>
+        <div className={styles.loanAdBar}>
+          <div className={styles.arrow}>
+            <MdKeyboardArrowUp></MdKeyboardArrowUp>
+          </div>
+          <div className={styles.loadSubCon}>
+            <div className={styles.totalPriceTag}>
+              <span className={styles.totalPrice}>
+                <span className={styles.dollarSign}>NT$</span>12,609,900
+              </span>
+              <span className={styles.totalPriceEndTag}>/目前總價</span>
+            </div>
+            <div className={styles.monthlyPriceTag}>
+              <span className={styles.monthlyPice}>
+                <span className={styles.dollarSign}>NT$</span>31,609
+              </span>
+              <span className={styles.monthlyPiceEndTag}>/最低月付</span>
+            </div>
+          </div>
+        </div>
+      </div>
       <div style={slidesContainerOverflowStyles} ref={SliderContainerRef}>
         <div style={getSlideContainerStylesWithWidth()}>
           {slides.map((_, slideIndex) => {
@@ -174,41 +195,6 @@ const MobileCarousel2 = ({ slides, parentWidth }) => {
             )
           })}
         </div>
-        {/* <div className={styles.lowerCon}>
-          <div style={dotsContainerStyles}>
-            <div className={styles.buildingSpacing}>棟別</div>
-            {slides.map((slides, slideIndex) => (
-              <div
-                key={slideIndex}
-                style={dotStyles}
-                className={
-                  slideIndex === currentIndex ? `${styles.active}` : ""
-                }
-                onClick={() => goToSlide(slideIndex)}
-              ></div>
-            ))}
-          </div>
-          <div className={styles.loanAdBar}>
-            <div className={styles.loanClickBar}>
-              <div className={styles.arrow}>
-                <MdKeyboardArrowUp></MdKeyboardArrowUp>
-              </div>
-              <div className={styles.totalPriceTag}>
-                <span className={styles.totalPrice}>
-                  <span className={styles.dollarSign}>NT$</span>12,609,900
-                </span>
-                <span className={styles.totalPriceEndTag}>/目前總價</span>
-              </div>
-              <div className={styles.monthlyPriceTag}>
-                <span className={styles.monthlyPice}>
-                  <span className={styles.dollarSign}>NT$</span>31,609
-                </span>
-                <span className={styles.monthlyPiceEndTag}>/最低月付</span>
-              </div>
-            </div>
-          </div>
-          <div className={styles.shouldShow3DModelNote}>外觀3D示意圖</div>
-        </div> */}
       </div>
     </div>
   )
