@@ -1,7 +1,9 @@
-import { useState, useEffect } from "react"
+import { useState, useEffect, useLayoutEffect } from "react"
 import "./App.css"
 import Carousel from "./Components/Carousel/Carousel"
 import SideBar from "./Components/SideBar/SideBar"
+import MobileCarousel from "./Components/Carousel/MobileCarousel"
+import NavBar from "./Components/NavBar/NavBar"
 
 function App() {
   const slides = [
@@ -11,31 +13,29 @@ function App() {
     { url: "./images/4.png" },
   ]
   const [viewportWidth, setViewportWidth] = useState(window.innerWidth)
-  useEffect(() => {
-    function handleResize() {
-      setViewportWidth(() => window.innerWidth * 0.72)
-    }
-    if (window.innerWidth > 1500) {
-      setViewportWidth(() => window.innerWidth * 0.72)
-    }
+  const [isMobile, setIsMobile] = useState(false)
 
-    if (window.innerWidth < 1500 && window.innerWidth > 800) {
-      setViewportWidth(() => window.innerWidth * 0.65)
+  useLayoutEffect(() => {
+    const handleResize = () => {
+      setViewportWidth(window.innerWidth)
+      if (window.innerWidth > 1500) {
+        setViewportWidth(() => window.innerWidth * 0.72)
+        setIsMobile(false)
+      } else if (window.innerWidth <= 1500 && window.innerWidth > 1366) {
+        setViewportWidth(() => window.innerWidth * 0.68)
+        setIsMobile(false)
+      } else {
+        setViewportWidth(() => window.innerWidth)
+        setIsMobile(true)
+      }
+      setIsMobile(window.innerWidth <= 1366)
     }
-
-    if (window.innerWidth < 1200 && window.innerWidth > 800) {
-      setViewportWidth(() => window.innerWidth * 0.6)
-    }
-
-    if (window.innerWidth < 800) {
-      setViewportWidth(() => window.innerWidth)
-    }
-
+    handleResize()
     window.addEventListener("resize", handleResize)
     return () => window.removeEventListener("resize", handleResize)
-  }, [viewportWidth])
+  }, [])
 
-  console.log(window.innerWidth)
+  // console.log(window.innerWidth)
 
   const containerStyles = {
     width: `${viewportWidth}px`,
@@ -45,24 +45,43 @@ function App() {
     overscrollBehaviorY: "none",
   }
 
+  const mobileContainerStyles = {
+    ...containerStyles,
+    height: "400px",
+    marginTop: "70px",
+  }
+
   const sideBarWidth =
-    window.innerWidth > 800 ? `${window.innerWidth - viewportWidth}px` : "100%"
+    window.innerWidth > 1366 ? `${window.innerWidth - viewportWidth}px` : "100%"
+
+  const overflowStyle = window.innerWidth > 1366 ? "scroll" : ""
 
   const sideBarCon = {
     width: `${sideBarWidth}`,
     height: "100vh",
     zIndex: "0",
-    // backgroundColor: "black",
+    overflowY: `${overflowStyle}`,
   }
 
   return (
     <div className="mainWrapper">
       <div className="subWrapper">
-        <div style={containerStyles}>
-          <Carousel slides={slides} parentWidth={viewportWidth} />
-        </div>
+        <NavBar isMobile={isMobile}></NavBar>
+        {!isMobile && (
+          <div style={containerStyles}>
+            <Carousel slides={slides} parentWidth={viewportWidth} />
+          </div>
+        )}
+        {isMobile && (
+          <div style={mobileContainerStyles}>
+            <MobileCarousel
+              slides={slides}
+              parentWidth={viewportWidth}
+            ></MobileCarousel>
+          </div>
+        )}
         <div style={sideBarCon}>
-          <SideBar></SideBar>
+          <SideBar sideBarWidth={sideBarWidth} isMobile={isMobile}></SideBar>
         </div>
       </div>
     </div>
